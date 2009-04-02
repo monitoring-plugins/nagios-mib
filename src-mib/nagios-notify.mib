@@ -1,7 +1,7 @@
 NAGIOS-NOTIFY-MIB DEFINITIONS ::= BEGIN
   IMPORTS
     MODULE-IDENTITY, OBJECT-TYPE,  NOTIFICATION-TYPE,
-    Integer32
+    Integer32, Gauge32
       FROM SNMPv2-SMI
     nagios,NotifyType,HostStateID,HostStateType,ServiceStateID
       FROM NAGIOS-ROOT-MIB;
@@ -228,7 +228,7 @@ nagiosHostNotifyTable OBJECT-TYPE
 
 HostNotifyEntry ::= SEQUENCE {
   nHostNotifyType    NotifyType,
-  nHostNotifyNum     Integer32,
+  nHostNotifyNum     Gauge32,    -- was Integer32,
   nHostAckAuthor     OCTET STRING,
   nHostAckComment    OCTET STRING
   }
@@ -253,7 +253,7 @@ nHostNotifyType  OBJECT-TYPE
   ::= { nagiosHostNotifyEntry 1 }
   
 nHostNotifyNum OBJECT-TYPE
-  SYNTAX     NotifyType
+  SYNTAX     Gauge32    -- was NotifyType
   MAX-ACCESS read-only
   STATUS     current
   DESCRIPTION 
@@ -510,7 +510,7 @@ nagiosSvcNotifyTable OBJECT-TYPE
   
 SvcNotifyEntry ::= SEQUENCE {
   nSvcNotifyType    NotifyType,
-  nSvcNotifyNum     Integer32,
+  nSvcNotifyNum     Gauge32,    -- Integer32,
   nSvcAckAuthor     OCTET STRING,
   nSvcAckComment    OCTET STRING
   }
@@ -536,7 +536,7 @@ nSvcNotifyType OBJECT-TYPE
   ::= { nagiosSvcNotifyEntry 1 }
 
 nSvcNotifyNum  OBJECT-TYPE
-  SYNTAX       Integer32
+  SYNTAX       Gauge32  -- Integer32
   MAX-ACCESS   read-only
   STATUS       current
   DESCRIPTION

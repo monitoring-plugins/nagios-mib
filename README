@@ -1,8 +1,6 @@
-$Id$
-
 This is the initial set of MIBs for Nagios to allow traps sent from Nagios to
 be recognized by other NMSes.
 
-Feedback should be directed to the nagiosplug-devel list.
+Feedback should be directed to the nagiosplug-devel list at http://nagiosplugins.org/mailinglists
 
 
