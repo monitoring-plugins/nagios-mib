@@ -1,0 +1,5 @@
+1.0.1 2nd April 2009
+	NotifyType set to Gauge32, instead of Integer32, for host and service notifications (thanks to Dirk Fieldhouse)
+	
+1.0.0 25th May 2005
+	Initial release
